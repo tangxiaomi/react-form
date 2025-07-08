@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { FormContext, FormProvider } from './contexts/FormContext';
 import FormProgress from './components/FormProgress/FormProgress';
-import FormStep1 from './components/FormStep1';
+import FormStep1 from './components/Form/FormStep1/FormStep1';
 import FormStep2 from './components/FormStep2';
 import FormStep3 from './components/FormStep3';
 import FormStep4 from './components/FormStep4';

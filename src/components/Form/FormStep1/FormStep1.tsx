@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { FormContext } from '../contexts/FormContext';
-import { type FormData } from '../types/formTypes.ts';
+import { FormContext } from '../../../contexts/FormContext.tsx';
+import { type FormData } from '../../../types/formTypes.ts';
 
 const schema = yup.object({
   firstName: yup.string().required('First name is required'),
