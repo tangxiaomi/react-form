@@ -1,0 +1,55 @@
+/* 进度条容器 */
+.progressContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #ddd;
+    z-index: 1;
+  }
+
+  .progressStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+  }
+
+  .stepNumber {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .progressStep.active .stepNumber {
+    background-color: #158ad8;
+  }
+
+  .stepLabel {
+    font-size: 14px;
+    color: #909fa0;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .progressStep.active .stepLabel {
+    color: #3498db;
+    font-weight: bold;
+  }
+}
