@@ -6,6 +6,7 @@ import FormStep2 from './components/FormStep2';
 import FormStep3 from './components/FormStep3';
 import FormStep4 from './components/FormStep4';
 import Notification from './components/Notification';
+import NativeForm from './components/NativeForm';
 import '@/styles/Form.scss';
 
 export default function App() {
@@ -29,6 +30,7 @@ function FormContent() {
       <FormProgress />
       
       <div className='form-wrapper'>
+        <NativeForm/>
         {currentStep === 1 && <FormStep1 nextStep={nextStep} />}
         {currentStep === 2 && <FormStep2 nextStep={nextStep} prevStep={prevStep} />}
         {currentStep === 3 && <FormStep3 nextStep={nextStep} prevStep={prevStep} />}
