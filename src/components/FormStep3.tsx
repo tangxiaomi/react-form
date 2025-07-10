@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -23,6 +23,7 @@ interface FormStep3Props {
 
 export default function FormStep3({ nextStep, prevStep }: FormStep3Props) {
   const { formData, updateFormData } = useContext(FormContext)!;
+  const [buttonName, setButtonName] = useState('NEXT');
   
   const { register, handleSubmit, formState: { errors } } = useForm<Partial<FormData>>({
     resolver: yupResolver(schema),
@@ -33,10 +34,17 @@ export default function FormStep3({ nextStep, prevStep }: FormStep3Props) {
   });
 
   const onSubmit = (data: Partial<FormData>) => {
+    console.log(data)
     updateFormData(data);
-    nextStep();
+    if (buttonName === 'NEXT') {
+      nextStep();
+    } else {
+      prevStep();
+    }
     console.log('123')
   };
+
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form-step">
@@ -55,7 +63,7 @@ export default function FormStep3({ nextStep, prevStep }: FormStep3Props) {
       </div>
       
       <div className="form-actions">
-        <button type="button" className="btn-prev" onClick={prevStep}>Back</button>
+        <button type="submit" className="btn-prev" onClick={() => setButtonName('PREV')}>Back</button>
         <button type="submit" className="btn-next">Next</button>
       </div>
     </form>

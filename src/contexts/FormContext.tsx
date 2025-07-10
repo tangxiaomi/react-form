@@ -22,6 +22,7 @@ export const FormProvider = ({ children }: FormProviderProps) => {
   const [submissionStatus, setSubmissionStatus] = useState<SubmissionStatus | null>(null);
 
   const updateFormData = (newData: Partial<FormData>) => {
+    // 可以拿做最新的prev, 如果直接使用formData 多次调用的情况下拿到的可能不是最新的
     setFormData((prev: FormData) => ({ ...prev, ...newData }));
   };
 

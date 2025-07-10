@@ -19,7 +19,7 @@ export default function App() {
 function FormContent() {
   const { currentStep, setCurrentStep } = useContext(FormContext)!;
   
-  const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
+  const nextStep = () => setCurrentStep(prev => {console.log('123'); return Math.min(prev + 1, 4)});
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
   return (
