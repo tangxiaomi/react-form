@@ -86,7 +86,7 @@ export default function FormStep1({ nextStep }: FormStep1Props) {
       </div>
       
       <div className="form-actions">
-        <button type="submit" className="btn-next" disabled={!isValid}>Next</button>
+        <button type="submit" className="text-red-100 text-9xl bg-blue-100" disabled={!isValid}>Next</button>
       </div>
     </form>
   );
