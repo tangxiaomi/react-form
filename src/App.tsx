@@ -7,7 +7,11 @@ import FormStep3 from './components/FormStep3';
 import FormStep4 from './components/FormStep4';
 import Notification from './components/Notification';
 import NativeForm from './components/NativeForm';
+import 'antd/dist/reset.css'; 
+import { Button } from 'antd';
 import '@/styles/Form.scss';
+import AntdForm from './components/AntdForm';
+import { HookFormWithAntd } from './components/HookFormWithAntd';
 
 export default function App() {
   return (
@@ -30,7 +34,10 @@ function FormContent() {
       <FormProgress />
       
       <div className='form-wrapper'>
+        <HookFormWithAntd/>
+        <AntdForm/>
         <NativeForm/>
+        <Button type="primary">Button</Button>
         {currentStep === 1 && <FormStep1 nextStep={nextStep} />}
         {currentStep === 2 && <FormStep2 nextStep={nextStep} prevStep={prevStep} />}
         {currentStep === 3 && <FormStep3 nextStep={nextStep} prevStep={prevStep} />}
